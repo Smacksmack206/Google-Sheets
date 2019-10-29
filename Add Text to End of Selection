@@ -1,0 +1,23 @@
+function onOpen() {
+ var ui = SpreadsheetApp.getUi()
+ ui.createMenu('Update Values')
+     .addItem('Add word to selection', 'addToFront')
+     .addToUi();
+}
+function addToFront() {
+ var selection = SpreadsheetApp.getActiveRange();
+ var oldData = selection.getValues();
+ var newData = [];
+ var newWord = Browser.inputBox("Please enter the word you would like to add to the text in this selection.", Browser.Buttons.OK_CANCEL);
+ for (i in oldData) {
+   var newRow = [];
+   for (j in oldData[i]){
+     if (typeof oldData[i][j] == 'string' && oldData[i][j].length > 0) {
+       newText = oldData[i][j] + ' ' + newWord
+       newRow.push(newText);
+     } else {
+       newRow.push(oldData[i][j]);
+     }
+   }
+   newData.push(newRow);
+ }  selection.setValues(newData); }
