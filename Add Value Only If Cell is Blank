@@ -1,7 +1,7 @@
 function onOpen() {
  var ui = SpreadsheetApp.getUi()
  ui.createMenu('Update Values')
-     .addItem('Add word to selection', 'addToFront')
+     .addItem('Add word to selection if blank', 'addToFront')
      .addToUi();
 }
 function addToFront() {
