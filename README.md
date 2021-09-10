@@ -1,6 +1,6 @@
 # Google-Sheets
 
-## Custom scripts to add new fuctions to Google Sheets 
+### Custom scripts to add new fuctions to Google Sheets 
 
 1. Visit the tools tab at the top of the page 
 2. Click Script Editor
